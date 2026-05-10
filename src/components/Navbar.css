@@ -36,6 +36,7 @@
   font-size: 14px;
   outline: none;
   background: #f9fafb;
+  color: #111827;
 }
 
 .navbar-search input:focus {
