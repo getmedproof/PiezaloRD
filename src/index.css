@@ -8,6 +8,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #f9fafb;
   color: #111827;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 input, textarea, select {

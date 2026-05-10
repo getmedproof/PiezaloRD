@@ -2,35 +2,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 10px 16px;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 100;
-  gap: 16px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .navbar-logo {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1B3A6B;
   text-decoration: none;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.navbar-logo span {
-  color: #F5920A;
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar-search {
   flex: 1;
-  max-width: 500px;
+  min-width: 0;
+  order: 3;
+  width: 100%;
 }
 
 .navbar-search input {
   width: 100%;
-  padding: 10px 16px;
+  padding: 9px 16px;
   border: 1.5px solid #e5e7eb;
   border-radius: 24px;
   font-size: 14px;
@@ -46,28 +48,15 @@
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .btn-post {
   background: #F5920A;
   color: white;
-  padding: 9px 18px;
+  padding: 8px 14px;
   border-radius: 24px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  white-space: nowrap;
-}
-
-.btn-login {
-  color: #1B3A6B;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-}
-.logo-img {
-  height: 200px;
-  width: auto;
-  object-fit: contain;
-}

@@ -112,3 +112,12 @@
   padding: 48px;
   color: #6b7280;
 }
+@media (max-width: 600px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-image {
+    height: 250px;
+  }
+}
