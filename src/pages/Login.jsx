@@ -1,14 +1,44 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { supabase } from '../supabase'
 import './Login.css'
 
 function Login() {
   const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(isSignUp ? 'Cuenta creada!' : 'Bienvenido!')
+    setLoading(true)
+
+    if (isSignUp) {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } }
+      })
+      if (error) {
+        alert(error.message)
+      } else {
+        alert('¡Cuenta creada! Revisa tu correo para confirmar.')
+        navigate('/')
+      }
+    } else {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      })
+      if (error) {
+        alert(error.message)
+      } else {
+        navigate('/')
+      }
+    }
+    setLoading(false)
   }
 
   return (
@@ -32,10 +62,16 @@ function Login() {
             required
           />
           {isSignUp && (
-            <input type="text" placeholder="Tu nombre o negocio" required />
+            <input
+              type="text"
+              placeholder="Tu nombre o negocio"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+            />
           )}
-          <button type="submit" className="btn-submit">
-            {isSignUp ? 'Crear cuenta' : 'Entrar'}
+          <button type="submit" className="btn-submit" disabled={loading}>
+            {loading ? 'Cargando...' : isSignUp ? 'Crear cuenta' : 'Entrar'}
           </button>
         </form>
         <p className="login-switch">
