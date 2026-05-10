@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -8,13 +9,15 @@ import Profile from './pages/Profile'
 import './App.css'
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('')
+
   return (
     <Router>
       <div className="app">
-        <Navbar />
+        <Navbar onSearch={setSearchQuery} />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home searchQuery={searchQuery} />} />
             <Route path="/listing/:id" element={<ListingDetail />} />
             <Route path="/post" element={<PostListing />} />
             <Route path="/login" element={<Login />} />

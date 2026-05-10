@@ -5,25 +5,29 @@ import './Home.css'
 
 const CATEGORIES = ['Todo', 'Motor', 'Suspensión', 'Frenos', 'Eléctrico', 'Carrocería', 'Transmisión']
 
-function Home() {
+function Home({ searchQuery = '' }) {
   const [activeCategory, setActiveCategory] = useState('Todo')
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    fetchListings()
-  }, [activeCategory])
+useEffect(() => {
+  fetchListings()
+}, [activeCategory, searchQuery])
 
   async function fetchListings() {
     setLoading(true)
     let query = supabase
-      .from('listings')
-      .select('*')
-      .order('created_at', { ascending: false })
+  .from('listings')
+  .select('*')
+  .order('created_at', { ascending: false })
 
-    if (activeCategory !== 'Todo') {
-      query = query.eq('category', activeCategory)
-    }
+if (activeCategory !== 'Todo') {
+  query = query.eq('category', activeCategory)
+}
+
+if (searchQuery) {
+  query = query.ilike('title', `%${searchQuery}%`)
+}
 
     const { data, error } = await query
     if (!error) setListings(data)
