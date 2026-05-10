@@ -43,8 +43,21 @@
 
 .listings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .listings-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .listings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .listing-card {
@@ -55,6 +68,7 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.15s, box-shadow 0.15s;
+  display: block;
 }
 
 .listing-card:hover {
@@ -69,11 +83,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 48px;
+  font-size: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
 }
 
 .card-body {
-  padding: 12px;
+  padding: 10px;
 }
 
 .badge {
@@ -115,7 +138,7 @@
 }
 
 .card-price {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: #F5920A;
   margin: 0 0 4px;
@@ -125,4 +148,27 @@
   font-size: 11px;
   color: #9ca3af;
   margin: 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px;
+  color: #6b7280;
+}
+
+.btn-first {
+  display: inline-block;
+  margin-top: 12px;
+  background: #F5920A;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
 }
