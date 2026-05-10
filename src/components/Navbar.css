@@ -60,3 +60,24 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-login {
+  color: #1B3A6B;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .navbar-search {
+    order: 0;
+    width: auto;
+  }
+
+  .navbar {
+    flex-wrap: nowrap;
+  }
+}
