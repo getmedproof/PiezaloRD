@@ -18,7 +18,7 @@
 }
 
 .logo-img {
-  height: 48px;
+  height: 70px;
   width: auto;
   object-fit: contain;
 }
@@ -28,6 +28,7 @@
   min-width: 0;
   order: 3;
   width: 100%;
+  max-width: 400px;
 }
 
 .navbar-search input {
