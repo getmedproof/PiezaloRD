@@ -8,6 +8,9 @@ function Navbar({ onSearch, selectedCity, onCityChange }) {
         <Link to="/" className="navbar-logo">
           <img src="/piezalord-logo.png" alt="PiezaloRD" className="logo-img" />
         </Link>
+        <button className="navbar-location" onClick={onCityChange}>
+          📍 {selectedCity || 'Todas las ciudades'} ▾
+        </button>
       </div>
       <div className="navbar-center">
         <input
