@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
-function Navbar({ onSearch }) {
+function Navbar({ onSearch, selectedCity, onCityChange }) {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo">
