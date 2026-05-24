@@ -24,12 +24,10 @@ const CITIES = [
   'Moca',
 ]
 
-function Home({ searchQuery = '' }) {
+function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker, setShowCityPicker }) {
   const [activeCategory, setActiveCategory] = useState('Todo')
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
-  const [selectedCity, setSelectedCity] = useState('Todas las ciudades')
-  const [showCityPicker, setShowCityPicker] = useState(false)
 
   useEffect(() => {
     fetchListings()
@@ -73,12 +71,6 @@ function Home({ searchQuery = '' }) {
         ))}
       </div>
 
-      <div className="location-bar">
-        <button className="location-btn" onClick={() => setShowCityPicker(true)}>
-          📍 {selectedCity}  ▾
-        </button>
-      </div>
-
       {showCityPicker && (
         <div className="city-overlay" onClick={() => setShowCityPicker(false)}>
           <div className="city-picker" onClick={e => e.stopPropagation()}>
@@ -112,27 +104,4 @@ function Home({ searchQuery = '' }) {
           <Link to="/post" className="btn-first">¡Sé el primero en publicar!</Link>
         </div>
       ) : (
-        <div className="listings-grid">
-          {listings.map(listing => (
-            <Link to={`/listing/${listing.id}`} key={listing.id} className="listing-card">
-              <div className="card-image">
-                {listing.image_url
-                  ? <img src={listing.image_url} alt={listing.title} />
-                  : '🔧'}
-              </div>
-              <div className="card-body">
-                <span className={`badge badge-${listing.condition?.toLowerCase()}`}>{listing.condition}</span>
-                <h3 className="card-title">{listing.title}</h3>
-                <p className="card-category">{listing.category}</p>
-                <p className="card-price">RD${Number(listing.price).toLocaleString()}</p>
-                <p className="card-location">📍 {listing.city}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-export default Home
+        <div

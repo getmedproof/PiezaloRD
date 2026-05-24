@@ -11,13 +11,26 @@ import './App.css'
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
 
+
   return (
     <Router>
       <div className="app">
-        <Navbar onSearch={setSearchQuery} />
+        <Navbar
+          onSearch={setSearchQuery}
+          selectedCity={selectedCity}
+          onCityChange={() => setShowCityPicker(true)}
+        />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home searchQuery={searchQuery} />} />
+            <Route path="/" element={
+              <Home
+                searchQuery={searchQuery}
+                selectedCity={selectedCity}
+                setSelectedCity={setSelectedCity}
+                showCityPicker={showCityPicker}
+                setShowCityPicker={setShowCityPicker}
+              />}
+            />
             <Route path="/listing/:id" element={<ListingDetail />} />
             <Route path="/post" element={<PostListing />} />
             <Route path="/login" element={<Login />} />
