@@ -95,3 +95,31 @@
     height: 45px;
   }
 }
+.navbar-location {
+  background: none;
+  border: none;
+  color: #1B3A6B;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 0;
+  text-align: left;
+}
+
+.navbar-location:hover {
+  text-decoration: underline;
+}
+.navbar-location {
+  background: none;
+  border: none;
+  color: #1B3A6B;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 0;
+  text-align: left;
+}
+
+.navbar-location:hover {
+  text-decoration: underline;
+}

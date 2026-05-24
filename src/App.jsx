@@ -10,7 +10,8 @@ import './App.css'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
-
+  const [selectedCity, setSelectedCity] = useState('Todas las ciudades')
+  const [showCityPicker, setShowCityPicker] = useState(false)
 
   return (
     <Router>
@@ -29,8 +30,8 @@ function App() {
                 setSelectedCity={setSelectedCity}
                 showCityPicker={showCityPicker}
                 setShowCityPicker={setShowCityPicker}
-              />}
-            />
+              />
+            } />
             <Route path="/listing/:id" element={<ListingDetail />} />
             <Route path="/post" element={<PostListing />} />
             <Route path="/login" element={<Login />} />
