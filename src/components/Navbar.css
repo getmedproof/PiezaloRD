@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   padding: 12px 24px;
   background: #ffffff;
@@ -17,7 +17,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-shrink: 0;
-  gap: 2px;
+  gap: 4px;
 }
 
 .navbar-logo {
@@ -40,7 +40,7 @@
   cursor: pointer;
   padding: 0;
   text-align: left;
-  margin-top: -4px;
+  display: block;
 }
 
 .navbar-location:hover {
@@ -50,6 +50,8 @@
 .navbar-center {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-search-input {

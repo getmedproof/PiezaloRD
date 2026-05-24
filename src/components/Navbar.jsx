@@ -12,6 +12,7 @@ function Navbar({ onSearch, selectedCity, onCityChange }) {
           📍 {selectedCity || 'Todas las ciudades'} ▾
         </button>
       </div>
+
       <div className="navbar-center">
         <input
           type="text"
@@ -20,6 +21,7 @@ function Navbar({ onSearch, selectedCity, onCityChange }) {
           onChange={e => onSearch && onSearch(e.target.value)}
         />
       </div>
+
       <div className="navbar-right">
         <Link to="/post" className="btn-post">+ Publicar</Link>
         <Link to="/login" className="btn-login">Entrar</Link>

@@ -8,6 +8,9 @@ const CATEGORIES = ['Todo', 'Motor', 'Suspensión', 'Frenos', 'Eléctrico', 'Car
 const CITIES = [
   'Todas las ciudades',
   'Santo Domingo',
+  'Santo Domingo Este',
+  'Santo Domingo Oeste',
+  'Santo Domingo Norte',
   'Santiago',
   'San Pedro de Macorís',
   'La Romana',
@@ -22,6 +25,25 @@ const CITIES = [
   'Azua',
   'San Cristóbal',
   'Moca',
+  'Nagua',
+  'Monte Cristi',
+  'Dajabón',
+  'Elías Piña',
+  'Jimaní',
+  'Pedernales',
+  'Bani',
+  'Constanza',
+  'Jarabacoa',
+  'Samaná',
+  'Las Terrenas',
+  'Sosúa',
+  'Cabarete',
+  'Boca Chica',
+  'Juan Dolio',
+  'Punta Cana',
+  'Bavaro',
+  'Villa Altagracia',
+  'Monción',
 ]
 
 function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker, setShowCityPicker }) {
@@ -45,7 +67,7 @@ function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker,
     }
 
     if (searchQuery) {
-      query = query.ilike('title', '%' + searchQuery + '%')
+      query = query.ilike('title', `%${searchQuery}%`)
     }
 
     if (selectedCity !== 'Todas las ciudades') {
@@ -63,7 +85,7 @@ function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker,
         {CATEGORIES.map(cat => (
           <button
             key={cat}
-            className={'chip' + (activeCategory === cat ? ' active' : '')}
+            className={`chip ${activeCategory === cat ? 'active' : ''}`}
             onClick={() => setActiveCategory(cat)}
           >
             {cat}
@@ -76,19 +98,19 @@ function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker,
           <div className="city-picker" onClick={e => e.stopPropagation()}>
             <div className="city-picker-header">
               <h3>Selecciona tu ciudad</h3>
-              <button onClick={() => setShowCityPicker(false)}>X</button>
+              <button onClick={() => setShowCityPicker(false)}>✕</button>
             </div>
             <div className="city-list">
               {CITIES.map(city => (
                 <button
                   key={city}
-                  className={'city-option' + (selectedCity === city ? ' selected' : '')}
+                  className={`city-option ${selectedCity === city ? 'selected' : ''}`}
                   onClick={() => {
                     setSelectedCity(city)
                     setShowCityPicker(false)
                   }}
                 >
-                  {city}
+                  📍 {city}
                 </button>
               ))}
             </div>
@@ -101,23 +123,23 @@ function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker,
       ) : listings.length === 0 ? (
         <div className="empty">
           <p>No hay piezas en {selectedCity}.</p>
-          <Link to="/post" className="btn-first">Se el primero en publicar!</Link>
+          <Link to="/post" className="btn-first">¡Sé el primero en publicar!</Link>
         </div>
       ) : (
         <div className="listings-grid">
           {listings.map(listing => (
-            <Link to={'/listing/' + listing.id} key={listing.id} className="listing-card">
+            <Link to={`/listing/${listing.id}`} key={listing.id} className="listing-card">
               <div className="card-image">
                 {listing.image_url
                   ? <img src={listing.image_url} alt={listing.title} />
                   : '🔧'}
               </div>
               <div className="card-body">
-                <span className={'badge badge-' + (listing.condition ? listing.condition.toLowerCase() : '')}>{listing.condition}</span>
+                <span className={`badge badge-${listing.condition?.toLowerCase()}`}>{listing.condition}</span>
                 <h3 className="card-title">{listing.title}</h3>
                 <p className="card-category">{listing.category}</p>
                 <p className="card-price">RD${Number(listing.price).toLocaleString()}</p>
-                <p className="card-location">{listing.city}</p>
+                <p className="card-location">📍 {listing.city}</p>
               </div>
             </Link>
           ))}
