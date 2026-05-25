@@ -57,10 +57,11 @@ function Home({ searchQuery = '', selectedCity, setSelectedCity, showCityPicker,
 
   async function fetchListings() {
     setLoading(true)
-    let query = supabase
-      .from('listings')
-      .select('*')
-      .order('created_at', { ascending: false })
+let query = supabase
+  .from('listings')
+  .select('*')
+  .eq('status', 'approved')
+  .order('created_at', { ascending: false })
 
     if (activeCategory !== 'Todo') {
       query = query.eq('category', activeCategory)
