@@ -1,0 +1,22 @@
+{
+  "name": "PiezaloRD",
+  "short_name": "PiezaloRD",
+  "description": "Marketplace de piezas de carros en República Dominicana",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1B3A6B",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/piezalordicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/piezalordicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
