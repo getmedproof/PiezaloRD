@@ -2,13 +2,27 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../supabase'
 import './Admin.css'
 
+const ADMIN_PASSWORD = 'Junior2018!'
+
 function Admin() {
+  const [auth, setAuth] = useState(false)
+  const [input, setInput] = useState('')
+  const [error, setError] = useState(false)
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
 
+  function handleLogin() {
+    if (input === ADMIN_PASSWORD) {
+      setAuth(true)
+      setError(false)
+    } else {
+      setError(true)
+    }
+  }
+
   useEffect(() => {
-    fetchPending()
-  }, [])
+    if (auth) fetchPending()
+  }, [auth])
 
   async function fetchPending() {
     setLoading(true)
@@ -29,6 +43,26 @@ function Admin() {
   async function reject(id) {
     await supabase.from('listings').update({ status: 'rejected' }).eq('id', id)
     setListings(listings.filter(l => l.id !== id))
+  }
+
+  if (!auth) {
+    return (
+      <div className="admin-login">
+        <h1 className="admin-title">Panel de Moderación</h1>
+        <div className="admin-login-box">
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleLogin()}
+            className="admin-password-input"
+          />
+          {error && <p className="admin-error">Contraseña incorrecta</p>}
+          <button className="btn-approve" onClick={handleLogin}>Entrar</button>
+        </div>
+      </div>
+    )
   }
 
   return (
