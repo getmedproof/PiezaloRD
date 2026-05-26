@@ -106,15 +106,23 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 16px;
+    padding: 10px 12px;
     gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .logo-img {
-    height: 70px;
+  .navbar-top {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .navbar-bottom {
     max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo-img {
+    height: 70px;
   }
 }
