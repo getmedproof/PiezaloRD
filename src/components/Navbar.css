@@ -126,6 +126,15 @@
   }
 
   .logo-img {
-    height: 70px;
+    height: 55px;
+  }
+
+  .btn-post {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .btn-login {
+    font-size: 12px;
   }
 }
