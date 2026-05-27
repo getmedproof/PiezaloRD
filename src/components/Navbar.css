@@ -140,3 +140,22 @@
     font-size: 12px;
   }
 }
+@media (max-width: 390px) {
+  .logo-img {
+    height: 45px;
+    max-width: 100px;
+  }
+
+  .btn-post {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .btn-login {
+    font-size: 11px;
+  }
+
+  .navbar {
+    padding: 8px 10px;
+  }
+}
