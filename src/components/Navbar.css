@@ -13,7 +13,7 @@
   padding: 12px 24px;
   gap: 10px;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .navbar-top {
