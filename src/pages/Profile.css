@@ -214,19 +214,19 @@
   }
 
   .profile-header {
-    padding: 16px;
-    gap: 12px;
+    padding: 12px;
+    gap: 10px;
     flex-wrap: wrap;
+  }
+
+  .profile-section {
+    padding: 12px;
   }
 
   .btn-logout {
     margin-left: 0;
     width: 100%;
     text-align: center;
-  }
-
-  .profile-section {
-    padding: 16px;
   }
 
   .section-header {
