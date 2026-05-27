@@ -12,7 +12,7 @@
   z-index: 100;
   padding: 12px 24px;
   gap: 10px;
-  max-width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 8px;
   width: 100%;
 }
 
@@ -31,6 +31,7 @@
   justify-content: center;
   gap: 4px;
   min-width: 0;
+  flex-shrink: 1;
 }
 
 .navbar-logo {
@@ -40,6 +41,7 @@
 .logo-img {
   height: 150px;
   width: auto;
+  max-width: 200px;
   object-fit: contain;
   display: block;
 }
@@ -65,7 +67,6 @@
   width: 100%;
   max-width: 700px;
   align-self: center;
-  min-width: 0;
 }
 
 .navbar-search-input {
@@ -127,10 +128,11 @@
 
   .logo-img {
     height: 55px;
+    max-width: 120px;
   }
 
   .btn-post {
-    padding: 8px 12px;
+    padding: 8px 10px;
     font-size: 12px;
   }
 
