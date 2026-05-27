@@ -217,3 +217,21 @@
 .btn-delete:hover {
   background: #fee2e2;
 }
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 12px;
+  }
+
+  .profile-header {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .profile-section {
+    padding: 16px;
+  }
+
+  .my-listing-card {
+    flex-wrap: wrap;
+  }
+}
