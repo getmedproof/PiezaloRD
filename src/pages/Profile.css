@@ -225,10 +225,27 @@
   .profile-header {
     padding: 16px;
     gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-logout {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .profile-section {
     padding: 16px;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-new {
+    width: 100%;
+    text-align: center;
   }
 
   .my-listing-card {
