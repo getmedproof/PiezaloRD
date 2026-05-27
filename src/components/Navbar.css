@@ -121,6 +121,10 @@
     gap: 8px;
   }
 
+  .navbar-right {
+    margin-right: 12px;
+  }
+  
   .navbar-bottom {
     max-width: 100%;
   }
