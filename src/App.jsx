@@ -6,8 +6,9 @@ import ListingDetail from './pages/ListingDetail'
 import PostListing from './pages/PostListing'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
-import './App.css'
 import Admin from './pages/Admin'
+import InstallPrompt from './components/InstallPrompt'
+import './App.css'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -37,9 +38,10 @@ function App() {
             <Route path="/post" element={<PostListing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
-          <Route path="/admin" element={<Admin />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
+        <InstallPrompt />
       </div>
     </Router>
   )

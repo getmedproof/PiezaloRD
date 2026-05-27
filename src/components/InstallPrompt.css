@@ -1,0 +1,59 @@
+.install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  z-index: 999;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.install-prompt-content {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  border: 1px solid #e5e7eb;
+}
+
+.install-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.install-text {
+  flex: 1;
+}
+
+.install-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.install-desc {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.install-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #9ca3af;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 4px;
+}
