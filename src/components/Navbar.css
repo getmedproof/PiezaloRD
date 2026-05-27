@@ -161,3 +161,15 @@
     font-size: 11px;
   }
 }
+.btn-post-short {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .btn-post-full {
+    display: none;
+  }
+  .btn-post-short {
+    display: inline;
+  }
+}
