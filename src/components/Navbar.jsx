@@ -32,7 +32,7 @@ function Navbar({ onSearch, selectedCity, onCityChange }) {
         <div className="navbar-right">
           <Link to="/post" className="btn-post">+ Publicar</Link>
           {user
-            ? <Link to="/profile" className="btn-login">Perfil</Link>
+            ? <Link to="/profile" className="btn-login">👤 Perfil</Link>
             : <Link to="/login" className="btn-login">Entrar</Link>
           }
         </div>
