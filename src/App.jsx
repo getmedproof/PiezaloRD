@@ -7,6 +7,7 @@ import PostListing from './pages/PostListing'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Admin from './pages/Admin'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import InstallPrompt from './components/InstallPrompt'
 import './App.css'
 
@@ -23,24 +24,31 @@ function App() {
           selectedCity={selectedCity}
           onCityChange={() => setShowCityPicker(true)}
         />
+
         <main className="main-content">
           <Routes>
-            <Route path="/" element={
-              <Home
-                searchQuery={searchQuery}
-                selectedCity={selectedCity}
-                setSelectedCity={setSelectedCity}
-                showCityPicker={showCityPicker}
-                setShowCityPicker={setShowCityPicker}
-              />
-            } />
+            <Route
+              path="/"
+              element={
+                <Home
+                  searchQuery={searchQuery}
+                  selectedCity={selectedCity}
+                  setSelectedCity={setSelectedCity}
+                  showCityPicker={showCityPicker}
+                  setShowCityPicker={setShowCityPicker}
+                />
+              }
+            />
+
             <Route path="/listing/:id" element={<ListingDetail />} />
             <Route path="/post" element={<PostListing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
+
         <InstallPrompt />
       </div>
     </Router>
