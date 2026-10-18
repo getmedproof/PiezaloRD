@@ -1,122 +1,463 @@
 export default function PrivacyPolicy() {
   return (
     <div style={{ maxWidth: '900px', margin: '0 auto', padding: '48px 24px 80px', lineHeight: 1.7 }}>
-      <h1>PiezaloRD Privacy Policy</h1>
-      <p><strong>Effective Date:</strong> October 17, 2026</p>
-      <p><strong>Last Updated:</strong> October 17, 2026</p>
+      <h1>Política de Privacidad de PiezaloRD</h1>
 
-      <p>PiezaloRD (“PiezaloRD,” “we,” “our,” or “us”) respects your privacy and is committed to protecting the personal information of users of the PiezaloRD website and mobile application.</p>
-      <p>This Privacy Policy explains what information we collect, how we use it, when information may be shared, how we protect it, and the choices available to you.</p>
-      <p>By using PiezaloRD, you acknowledge the practices described in this Privacy Policy.</p>
+      <p><strong>Fecha de entrada en vigor:</strong> 17 de octubre de 2026</p>
+      <p><strong>Última actualización:</strong> 17 de octubre de 2026</p>
 
-      <h2>1. Information We Collect</h2>
-      <p>The information we collect depends on how you use PiezaloRD.</p>
-      <h3>Information You Provide</h3>
-      <p>When you create an account, create a listing, update your profile, communicate with another user, or contact us, you may provide information such as:</p>
+      <p>
+        PiezaloRD (“PiezaloRD”, “nosotros”, “nuestro” o “nos”) respeta su privacidad
+        y se compromete a proteger la información personal de los usuarios del sitio web
+        y de la aplicación móvil de PiezaloRD.
+      </p>
+
+      <p>
+        Esta Política de Privacidad explica qué información recopilamos, cómo la usamos,
+        cuándo puede compartirse, cómo la protegemos y qué opciones tiene usted con respecto
+        a su información.
+      </p>
+
+      <p>
+        Al utilizar PiezaloRD, usted reconoce las prácticas descritas en esta Política de Privacidad.
+      </p>
+
+      <h2>1. Información que recopilamos</h2>
+      <p>La información que recopilamos depende de cómo utilice PiezaloRD.</p>
+
+      <h3>Información que usted proporciona</h3>
+      <p>
+        Cuando crea una cuenta, publica un anuncio, actualiza su perfil, se comunica con otro
+        usuario o se pone en contacto con nosotros, puede proporcionar información como:
+      </p>
+
       <ul>
-        <li>Name</li>
-        <li>Email address</li>
-        <li>Phone number</li>
-        <li>Account and profile information</li>
-        <li>Vehicle information</li>
-        <li>Automobile, motorcycle, SUV, truck, or heavy-equipment information</li>
-        <li>Auto-part and product information</li>
-        <li>Listing descriptions</li>
-        <li>Listing prices</li>
-        <li>Photos and images</li>
-        <li>Messages and communications</li>
-        <li>Information provided when contacting PiezaloRD for support</li>
-      </ul>
-      <p>Some information contained in marketplace listings may be publicly visible to other users.</p>
-      <p>You should not include sensitive personal information in listings, profiles, or messages that you do not want other people to see.</p>
-
-      <h2>2. Location Information</h2>
-      <p>PiezaloRD currently allows users to manually select or provide location information, such as a city or area, when creating or searching for listings.</p>
-      <p>We use this information to help users find relevant parts, sellers, buyers, and listings in their area.</p>
-      <p>PiezaloRD does <strong>not currently require GPS location access</strong> for this functionality.</p>
-      <p>If location-based functionality changes in the future, this Privacy Policy may be updated accordingly.</p>
-
-      <h2>3. Photos and Images</h2>
-      <p>PiezaloRD allows users to upload photos and images for marketplace listings, user profiles, and vehicle or auto-part information.</p>
-      <p>When you choose to upload an image, the application may request permission to access photos or media stored on your device.</p>
-      <p>PiezaloRD only accesses photos or media when permitted by you and when necessary to provide the feature you are using.</p>
-
-      <h2>4. Messages and Communication</h2>
-      <p>PiezaloRD allows users to communicate with other users through features available within the platform.</p>
-      <p>Users may also choose to communicate outside PiezaloRD through third-party services such as <strong>WhatsApp</strong>.</p>
-      <p>When you use WhatsApp or another third-party service, your use of that service is subject to that third party's privacy policy and terms.</p>
-
-      <h2>5. Device, Analytics, and Technical Information</h2>
-      <p>When you use PiezaloRD, we or our service providers may automatically receive technical or usage information such as device type, operating system, browser type, app version, IP address, usage information, diagnostic information, and security-related information.</p>
-      <p>PiezaloRD uses <strong>Google Analytics</strong> to understand how users interact with the website or application and to improve the service.</p>
-
-      <h2>6. How We Use Your Information</h2>
-      <ul>
-        <li>Create and manage user accounts</li>
-        <li>Operate and maintain PiezaloRD</li>
-        <li>Allow users to create, edit, and manage marketplace listings</li>
-        <li>Display vehicle and auto-part listings</li>
-        <li>Help buyers and sellers connect</li>
-        <li>Facilitate communication between users</li>
-        <li>Provide customer support</li>
-        <li>Maintain and improve the application and website</li>
-        <li>Detect or prevent fraud, spam, abuse, or unauthorized activity</li>
-        <li>Maintain account and platform security</li>
-        <li>Comply with applicable legal obligations</li>
+        <li>Nombre</li>
+        <li>Correo electrónico</li>
+        <li>Número de teléfono</li>
+        <li>Información de la cuenta y del perfil</li>
+        <li>Información del vehículo</li>
+        <li>Información sobre automóviles, motocicletas, SUV, camiones o equipos pesados</li>
+        <li>Información sobre piezas, repuestos y productos</li>
+        <li>Descripciones de anuncios</li>
+        <li>Precios de los anuncios</li>
+        <li>Fotografías e imágenes</li>
+        <li>Mensajes y comunicaciones</li>
+        <li>Información proporcionada al contactar a PiezaloRD para recibir soporte</li>
       </ul>
 
-      <h2>7. How We Share Information</h2>
-      <p>PiezaloRD does <strong>not sell your personal information for money</strong>.</p>
-      <p>Information you intentionally publish through a marketplace listing or public profile may be visible to other users.</p>
-      <p>We may also use third-party service providers for hosting, databases, image storage, authentication, analytics, email or communications, and security.</p>
-      <p>We may disclose information when reasonably necessary to comply with law, respond to lawful requests, investigate fraud or abuse, protect users, or enforce our policies.</p>
+      <p>
+        Parte de la información incluida en los anuncios del marketplace puede ser visible
+        públicamente para otros usuarios.
+      </p>
 
-      <h2>8. User-Generated Content</h2>
-      <p>PiezaloRD allows users to submit listings, vehicle information, photos, descriptions, prices, profile information, messages, and reviews or feedback when available.</p>
-      <p>Do not post passwords, banking information, credit-card information, government identification numbers, or other highly sensitive personal information in public listings.</p>
+      <p>
+        No debe incluir información personal sensible en anuncios, perfiles o mensajes si no
+        desea que otras personas puedan verla.
+      </p>
 
-      <h2>9. Payments</h2>
-      <p>PiezaloRD <strong>does not currently process payments between buyers and sellers through the platform</strong>.</p>
-      <p>Users are responsible for arranging purchases and payments directly with one another.</p>
-      <p>If PiezaloRD introduces payment processing in the future, this Privacy Policy may be updated.</p>
+      <h2>2. Información de ubicación</h2>
+      <p>
+        PiezaloRD actualmente permite que los usuarios seleccionen o indiquen manualmente
+        información de ubicación, como una ciudad o zona, al crear o buscar anuncios.
+      </p>
 
-      <h2>10. Data Storage and Retention</h2>
-      <p>We retain information for as long as reasonably necessary to provide services, maintain accounts and listings, resolve disputes, prevent fraud, maintain security, comply with legal obligations, and enforce our policies.</p>
+      <p>
+        Utilizamos esta información para ayudar a los usuarios a encontrar piezas, vendedores,
+        compradores y anuncios relevantes en su área.
+      </p>
 
-      <h2>11. Account and Data Deletion</h2>
-      <p>Users may delete their PiezaloRD account through the account-deletion functionality available within the application.</p>
-      <p>You may also request deletion by emailing <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>.</p>
-      <p>Please include your name, the email address associated with your account, and a statement requesting deletion of your account and associated information.</p>
+      <p>
+        PiezaloRD <strong>no requiere actualmente acceso a la ubicación GPS</strong> para esta función.
+      </p>
 
-      <h2>12. Security</h2>
-      <p>We use reasonable administrative, technical, and organizational measures designed to protect information from unauthorized access, alteration, disclosure, loss, or destruction.</p>
-      <p>However, no website, mobile application, electronic storage system, or internet transmission can be guaranteed to be completely secure.</p>
+      <p>
+        Si en el futuro se añaden funciones basadas en GPS, esta Política de Privacidad podrá
+        actualizarse para reflejar esos cambios.
+      </p>
 
-      <h2>13. Children’s Privacy</h2>
-      <p>PiezaloRD is not directed toward children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
+      <h2>3. Fotografías e imágenes</h2>
+      <p>
+        PiezaloRD permite que los usuarios suban fotografías e imágenes para:
+      </p>
 
-      <h2>14. Third-Party Services and Links</h2>
-      <p>PiezaloRD may contain links to or interact with third-party services including WhatsApp, Google Analytics, hosting and database providers, and authentication providers.</p>
-      <p>PiezaloRD does not control the privacy practices of third-party websites or services.</p>
+      <ul>
+        <li>Anuncios del marketplace</li>
+        <li>Perfiles de usuario</li>
+        <li>Información de vehículos o piezas</li>
+      </ul>
 
-      <h2>15. Cookies and Similar Technologies</h2>
-      <p>The PiezaloRD website may use cookies, local storage, analytics technologies, or similar technologies to maintain functionality, remember preferences, understand usage, improve performance, and maintain security.</p>
+      <p>
+        Cuando decide subir una imagen, la aplicación puede solicitar permiso para acceder
+        a las fotografías o archivos multimedia almacenados en su dispositivo.
+      </p>
 
-      <h2>16. Your Privacy Choices</h2>
-      <p>Depending on applicable law and your location, you may have rights to access, correct, or delete certain personal information, modify listings and profile information, and control device permissions.</p>
-      <p>To submit a privacy-related request, contact <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>.</p>
+      <p>
+        PiezaloRD solo accede a fotografías o archivos multimedia cuando usted lo permite
+        y cuando sea necesario para utilizar la función correspondiente.
+      </p>
 
-      <h2>17. International Users</h2>
-      <p>PiezaloRD serves users in the Dominican Republic and may use service providers whose systems or servers are located in other countries.</p>
+      <p>
+        Puede administrar estos permisos desde la configuración de su dispositivo.
+      </p>
 
-      <h2>18. Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy periodically. When we do, we will update the “Last Updated” date at the top of this page.</p>
+      <h2>4. Mensajes y comunicación</h2>
+      <p>
+        PiezaloRD permite que los usuarios se comuniquen entre sí mediante funciones disponibles
+        dentro de la plataforma.
+      </p>
 
-      <h2>19. Contact Us</h2>
+      <p>
+        Los usuarios también pueden optar por comunicarse fuera de PiezaloRD mediante servicios
+        de terceros como <strong>WhatsApp</strong>, cuando exista una opción de contacto por WhatsApp
+        o cuando el usuario proporcione esa información.
+      </p>
+
+      <p>
+        Cuando utiliza WhatsApp u otro servicio externo, el uso de ese servicio queda sujeto
+        a los términos y políticas de privacidad de ese tercero.
+      </p>
+
+      <p>
+        PiezaloRD no controla ni se hace responsable de las prácticas de privacidad de plataformas
+        de comunicación de terceros.
+      </p>
+
+      <h2>5. Información técnica, del dispositivo y de analítica</h2>
+      <p>
+        Cuando utiliza PiezaloRD, nosotros o nuestros proveedores de servicios podemos recibir
+        automáticamente cierta información técnica o de uso, que puede incluir:
+      </p>
+
+      <ul>
+        <li>Tipo de dispositivo</li>
+        <li>Sistema operativo</li>
+        <li>Tipo de navegador</li>
+        <li>Versión de la aplicación</li>
+        <li>Dirección IP</li>
+        <li>Identificadores técnicos o generales del dispositivo</li>
+        <li>Páginas o funciones utilizadas</li>
+        <li>Información de interacción y uso</li>
+        <li>Información de diagnóstico</li>
+        <li>Información relacionada con seguridad</li>
+      </ul>
+
+      <p>
+        PiezaloRD utiliza <strong>Google Analytics</strong> para comprender cómo los usuarios
+        interactúan con el sitio web o la aplicación y para ayudarnos a mejorar el servicio.
+      </p>
+
+      <p>
+        Google Analytics puede recopilar y procesar información de acuerdo con las políticas
+        de privacidad de Google.
+      </p>
+
+      <h2>6. Cómo utilizamos su información</h2>
+      <p>Podemos utilizar la información recopilada a través de PiezaloRD para:</p>
+
+      <ul>
+        <li>Crear y administrar cuentas de usuario</li>
+        <li>Operar y mantener PiezaloRD</li>
+        <li>Permitir que los usuarios creen, editen y administren anuncios</li>
+        <li>Mostrar anuncios de vehículos, piezas y repuestos</li>
+        <li>Ayudar a conectar compradores y vendedores</li>
+        <li>Facilitar la comunicación entre usuarios</li>
+        <li>Mostrar anuncios según las ubicaciones seleccionadas manualmente</li>
+        <li>Proporcionar soporte al usuario</li>
+        <li>Mantener y mejorar la aplicación y el sitio web</li>
+        <li>Comprender cómo los usuarios interactúan con PiezaloRD</li>
+        <li>Desarrollar nuevas funciones</li>
+        <li>Detectar o prevenir fraude, spam, abuso o actividad no autorizada</li>
+        <li>Mantener la seguridad de las cuentas y de la plataforma</li>
+        <li>Resolver problemas técnicos</li>
+        <li>Aplicar nuestras políticas</li>
+        <li>Cumplir con obligaciones legales aplicables</li>
+      </ul>
+
+      <h2>7. Cómo compartimos la información</h2>
+      <p>
+        PiezaloRD <strong>no vende su información personal a cambio de dinero</strong>.
+      </p>
+
+      <h3>Otros usuarios</h3>
+      <p>
+        La información que usted publique voluntariamente en un anuncio o perfil público
+        puede ser visible para otros usuarios.
+      </p>
+
+      <p>Esto puede incluir:</p>
+
+      <ul>
+        <li>Fotografías del anuncio</li>
+        <li>Descripciones de productos o piezas</li>
+        <li>Información del vehículo</li>
+        <li>Precios</li>
+        <li>Ubicación general</li>
+        <li>Información del vendedor</li>
+        <li>Información de contacto que usted decida hacer pública</li>
+      </ul>
+
+      <h3>Proveedores de servicios</h3>
+      <p>
+        Podemos utilizar empresas y proveedores tecnológicos externos para ayudar a operar PiezaloRD.
+      </p>
+
+      <p>Estos servicios pueden incluir:</p>
+
+      <ul>
+        <li>Alojamiento del sitio web y de la aplicación</li>
+        <li>Base de datos</li>
+        <li>Almacenamiento de archivos e imágenes</li>
+        <li>Autenticación</li>
+        <li>Analítica</li>
+        <li>Servicios de correo electrónico o comunicaciones</li>
+        <li>Seguridad</li>
+      </ul>
+
+      <h3>Requisitos legales</h3>
+      <p>Podemos divulgar información cuando sea razonablemente necesario para:</p>
+
+      <ul>
+        <li>Cumplir con leyes o procesos legales aplicables</li>
+        <li>Responder a solicitudes legales de autoridades gubernamentales</li>
+        <li>Investigar posibles casos de fraude, abuso o incidentes de seguridad</li>
+        <li>Proteger los derechos, la seguridad o la propiedad de PiezaloRD, nuestros usuarios u otras personas</li>
+        <li>Aplicar nuestros acuerdos o políticas</li>
+      </ul>
+
+      <h2>8. Contenido generado por los usuarios</h2>
+      <p>PiezaloRD permite que los usuarios publiquen contenido como:</p>
+
+      <ul>
+        <li>Anuncios de piezas y repuestos</li>
+        <li>Información de vehículos</li>
+        <li>Fotografías</li>
+        <li>Descripciones</li>
+        <li>Precios</li>
+        <li>Información del perfil</li>
+        <li>Mensajes</li>
+        <li>Reseñas o comentarios, cuando estén disponibles</li>
+      </ul>
+
+      <p>
+        El contenido que publique voluntariamente puede ser visible para otros usuarios o visitantes.
+      </p>
+
+      <p>
+        No publique contraseñas, información bancaria, datos completos de tarjetas de crédito,
+        números de identificación gubernamental u otra información personal altamente sensible
+        en anuncios públicos.
+      </p>
+
+      <h2>9. Pagos</h2>
+      <p>
+        PiezaloRD <strong>no procesa actualmente pagos entre compradores y vendedores dentro de la plataforma</strong>.
+      </p>
+
+      <p>
+        Los usuarios son responsables de organizar directamente entre ellos las compras y los pagos.
+      </p>
+
+      <p>
+        Si PiezaloRD añade procesamiento de pagos en el futuro, esta Política de Privacidad podrá
+        actualizarse para explicar cómo se manejará la información relacionada con los pagos.
+      </p>
+
+      <h2>10. Almacenamiento y conservación de datos</h2>
+      <p>Conservamos información durante el tiempo razonablemente necesario para:</p>
+
+      <ul>
+        <li>Proporcionar los servicios de PiezaloRD</li>
+        <li>Mantener cuentas de usuario</li>
+        <li>Operar los anuncios del marketplace</li>
+        <li>Resolver disputas</li>
+        <li>Prevenir fraude o abuso</li>
+        <li>Mantener la seguridad de la plataforma</li>
+        <li>Cumplir con obligaciones legales</li>
+        <li>Aplicar nuestros acuerdos y políticas</li>
+      </ul>
+
+      <p>
+        La información que ya no sea razonablemente necesaria podrá eliminarse o anonimizarse,
+        sujeto a requisitos legales, de seguridad y operativos legítimos.
+      </p>
+
+      <h2>11. Eliminación de cuenta y datos</h2>
+      <p>
+        Los usuarios pueden eliminar su cuenta de PiezaloRD mediante la función de eliminación
+        de cuenta disponible dentro de la aplicación.
+      </p>
+
+      <p>
+        También puede solicitar la eliminación de su cuenta o de la información personal asociada
+        enviando un correo electrónico a:
+      </p>
+
+      <p>
+        <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>
+      </p>
+
+      <p>Incluya:</p>
+
+      <ul>
+        <li>Su nombre</li>
+        <li>El correo electrónico asociado a su cuenta de PiezaloRD</li>
+        <li>Una solicitud indicando que desea eliminar su cuenta y la información personal asociada</li>
+      </ul>
+
+      <p>
+        Cierta información puede conservarse durante un período limitado cuando sea razonablemente
+        necesario para cumplir obligaciones legales, prevenir fraude, mantener la seguridad,
+        resolver disputas u otras obligaciones legítimas.
+      </p>
+
+      <h2>12. Seguridad</h2>
+      <p>
+        Utilizamos medidas administrativas, técnicas y organizativas razonables diseñadas para
+        proteger la información contra acceso, alteración, divulgación, pérdida o destrucción no autorizados.
+      </p>
+
+      <p>
+        Sin embargo, ningún sitio web, aplicación móvil, sistema de almacenamiento electrónico
+        o transmisión por internet puede garantizarse como completamente seguro.
+      </p>
+
+      <p>
+        Los usuarios son responsables de proteger sus contraseñas y credenciales de acceso.
+      </p>
+
+      <p>
+        Si cree que alguien ha accedido a su cuenta sin autorización, contáctenos en{' '}
+        <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>.
+      </p>
+
+      <h2>13. Privacidad de menores</h2>
+      <p>
+        PiezaloRD no está dirigido a menores de 13 años.
+      </p>
+
+      <p>
+        No recopilamos conscientemente información personal de menores de 13 años.
+      </p>
+
+      <p>
+        Si descubrimos que hemos recopilado información personal de un menor de 13 años sin
+        la autorización correspondiente, tomaremos medidas razonables para eliminarla.
+      </p>
+
+      <h2>14. Servicios y enlaces de terceros</h2>
+      <p>
+        PiezaloRD puede contener enlaces o interactuar con servicios de terceros, incluyendo:
+      </p>
+
+      <ul>
+        <li>WhatsApp</li>
+        <li>Google Analytics</li>
+        <li>Proveedores de alojamiento y bases de datos</li>
+        <li>Proveedores de autenticación</li>
+      </ul>
+
+      <p>
+        PiezaloRD no controla las prácticas de privacidad de sitios web o servicios de terceros.
+      </p>
+
+      <p>
+        Le recomendamos revisar las políticas de privacidad de cualquier servicio externo que utilice.
+      </p>
+
+      <h2>15. Cookies y tecnologías similares</h2>
+      <p>
+        El sitio web de PiezaloRD puede utilizar cookies, almacenamiento local, tecnologías
+        analíticas u otras tecnologías similares para:
+      </p>
+
+      <ul>
+        <li>Mantener el funcionamiento del sitio web</li>
+        <li>Recordar preferencias</li>
+        <li>Comprender el uso del sitio</li>
+        <li>Mejorar el rendimiento</li>
+        <li>Mantener la seguridad</li>
+      </ul>
+
+      <p>
+        Puede administrar las cookies desde la configuración de su navegador.
+      </p>
+
+      <p>
+        Deshabilitar ciertas tecnologías puede afectar algunas funciones del sitio web.
+      </p>
+
+      <h2>16. Sus opciones de privacidad</h2>
+      <p>
+        Dependiendo de la legislación aplicable y de su ubicación, usted puede tener la posibilidad de:
+      </p>
+
+      <ul>
+        <li>Acceder a determinada información personal asociada con su cuenta</li>
+        <li>Corregir información incorrecta</li>
+        <li>Eliminar su cuenta</li>
+        <li>Solicitar la eliminación de determinada información personal</li>
+        <li>Modificar información de su perfil</li>
+        <li>Eliminar o modificar sus anuncios</li>
+        <li>Controlar los permisos de fotografías y archivos multimedia</li>
+        <li>Solicitar información sobre cómo utilizamos sus datos personales</li>
+      </ul>
+
+      <p>
+        Para realizar una solicitud relacionada con privacidad, escriba a{' '}
+        <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>.
+      </p>
+
+      <h2>17. Usuarios internacionales</h2>
+      <p>
+        PiezaloRD presta servicios principalmente a usuarios en la República Dominicana y puede
+        utilizar proveedores cuyos sistemas o servidores se encuentren en otros países.
+      </p>
+
+      <p>
+        Como resultado, su información puede ser procesada o almacenada fuera del país en el que reside.
+      </p>
+
+      <p>
+        Cuando esto ocurra, la información será tratada de acuerdo con las leyes aplicables
+        y con las prácticas descritas en esta Política de Privacidad.
+      </p>
+
+      <h2>18. Cambios a esta Política de Privacidad</h2>
+      <p>
+        Podemos actualizar esta Política de Privacidad periódicamente a medida que PiezaloRD cambie
+        o incorpore nuevas funciones.
+      </p>
+
+      <p>
+        Cuando realicemos cambios, actualizaremos la fecha de <strong>“Última actualización”</strong>
+        indicada al inicio de esta página.
+      </p>
+
+      <p>
+        En caso de cambios importantes, también podemos proporcionar un aviso mediante el sitio web,
+        la aplicación u otro medio apropiado.
+      </p>
+
+      <h2>19. Contáctenos</h2>
       <p><strong>PiezaloRD</strong></p>
-      <p>Website: <a href="https://piezalord.com">https://piezalord.com</a></p>
-      <p>Email: <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a></p>
-      <p>Privacy Policy: <a href="https://piezalord.com/privacy-policy">https://piezalord.com/privacy-policy</a></p>
+
+      <p>
+        Sitio web:{' '}
+        <a href="https://piezalord.com">https://piezalord.com</a>
+      </p>
+
+      <p>
+        Correo electrónico:{' '}
+        <a href="mailto:info.piezalord@gmail.com">info.piezalord@gmail.com</a>
+      </p>
+
+      <p>
+        Política de Privacidad:{' '}
+        <a href="https://piezalord.com/privacy-policy">
+          https://piezalord.com/privacy-policy
+        </a>
+      </p>
     </div>
   )
 }
