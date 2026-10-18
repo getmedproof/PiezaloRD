@@ -45,12 +45,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
-            <Route
-              path="/privacy-policy"
-              element={<PrivacyPolicy />}
-            />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
-        </main>
         </main>
 
         <footer
@@ -72,6 +68,7 @@ function App() {
             Política de Privacidad
           </a>
         </footer>
+
         <InstallPrompt />
       </div>
     </Router>
