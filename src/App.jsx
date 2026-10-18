@@ -51,7 +51,27 @@ function App() {
             />
           </Routes>
         </main>
+        </main>
 
+        <footer
+          style={{
+            padding: '24px',
+            textAlign: 'center',
+            fontSize: '14px',
+            borderTop: '1px solid #e5e5e5',
+            marginTop: '40px'
+          }}
+        >
+          <a
+            href="/privacy-policy"
+            style={{
+              color: '#555',
+              textDecoration: 'none'
+            }}
+          >
+            Política de Privacidad
+          </a>
+        </footer>
         <InstallPrompt />
       </div>
     </Router>
