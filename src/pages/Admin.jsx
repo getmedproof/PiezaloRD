@@ -2,27 +2,48 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../supabase'
 import './Admin.css'
 
-const ADMIN_PASSWORD = 'Junior2018!'
+// Who can see the panel. The database enforces the same list.
+const ADMIN_EMAILS = ['castrocdl.realty@gmail.com', 'cbnoneinfo@gmail.com']
 
 function Admin() {
-  const [auth, setAuth] = useState(false)
-  const [input, setInput] = useState('')
-  const [error, setError] = useState(false)
+  const [user, setUser] = useState(null)
+  const [checking, setChecking] = useState(true)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
 
-  function handleLogin() {
-    if (input === ADMIN_PASSWORD) {
-      setAuth(true)
-      setError(false)
-    } else {
-      setError(true)
-    }
-  }
+  const isAdmin = !!user && ADMIN_EMAILS.includes((user.email || '').toLowerCase())
 
   useEffect(() => {
-    if (auth) fetchPending()
-  }, [auth])
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user ?? null)
+      setChecking(false)
+    })
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => sub.subscription.unsubscribe()
+  }, [])
+
+  useEffect(() => {
+    if (isAdmin) fetchPending()
+  }, [isAdmin])
+
+  async function handleLogin() {
+    setError('')
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email.trim(),
+      password,
+    })
+    if (error) setError('Correo o contraseña incorrectos')
+  }
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    setListings([])
+  }
 
   async function fetchPending() {
     setLoading(true)
@@ -35,32 +56,56 @@ function Admin() {
     setLoading(false)
   }
 
-  async function approve(id) {
-    await supabase.from('listings').update({ status: 'approved' }).eq('id', id)
-    setListings(listings.filter(l => l.id !== id))
+  async function setStatus(id, status) {
+    const { data, error } = await supabase
+      .from('listings')
+      .update({ status })
+      .eq('id', id)
+      .select()
+    if (error || !data || data.length === 0) {
+      alert('No se pudo actualizar el listado.')
+      return
+    }
+    setListings(prev => prev.filter(l => l.id !== id))
   }
 
-  async function reject(id) {
-    await supabase.from('listings').update({ status: 'rejected' }).eq('id', id)
-    setListings(listings.filter(l => l.id !== id))
+  if (checking) {
+    return <div className="admin"><p className="admin-loading">Cargando...</p></div>
   }
 
-  if (!auth) {
+  if (!user) {
     return (
       <div className="admin-login">
         <h1 className="admin-title">Panel de Moderación</h1>
         <div className="admin-login-box">
           <input
+            type="email"
+            placeholder="Correo"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            className="admin-password-input"
+          />
+          <input
             type="password"
             placeholder="Contraseña"
-            value={input}
-            onChange={e => setInput(e.target.value)}
+            value={password}
+            onChange={e => setPassword(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && handleLogin()}
             className="admin-password-input"
           />
-          {error && <p className="admin-error">Contraseña incorrecta</p>}
+          {error && <p className="admin-error">{error}</p>}
           <button className="btn-approve" onClick={handleLogin}>Entrar</button>
         </div>
+      </div>
+    )
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="admin-login">
+        <h1 className="admin-title">Panel de Moderación</h1>
+        <p className="admin-error">Esta cuenta no tiene acceso de administrador.</p>
+        <button className="btn-reject" onClick={handleLogout}>Cerrar sesión</button>
       </div>
     )
   }
@@ -68,6 +113,7 @@ function Admin() {
   return (
     <div className="admin">
       <h1 className="admin-title">Panel de Moderación</h1>
+      <button className="btn-reject" onClick={handleLogout}>Cerrar sesión</button>
       {loading ? (
         <p className="admin-loading">Cargando...</p>
       ) : listings.length === 0 ? (
@@ -91,8 +137,8 @@ function Admin() {
                 <p><strong>WhatsApp:</strong> {listing.whatsapp}</p>
               </div>
               <div className="admin-card-actions">
-                <button className="btn-approve" onClick={() => approve(listing.id)}>✅ Aprobar</button>
-                <button className="btn-reject" onClick={() => reject(listing.id)}>❌ Rechazar</button>
+                <button className="btn-approve" onClick={() => setStatus(listing.id, 'approved')}>✅ Aprobar</button>
+                <button className="btn-reject" onClick={() => setStatus(listing.id, 'rejected')}>❌ Rechazar</button>
               </div>
             </div>
           ))}
