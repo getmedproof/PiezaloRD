@@ -5,7 +5,14 @@ import './PostListing.css'
 
 const CATEGORIES = ['Motor', 'Suspensión', 'Frenos', 'Eléctrico', 'Carrocería', 'Transmisión']
 const CONDITIONS = ['Nuevo', 'Usado', 'OEM']
-const CITIES = ['Santo Domingo', 'Santiago', 'San Pedro de Macorís', 'La Romana', 'Puerto Plata', 'San Francisco de Macorís']
+const CITIES = [
+  'Santo Domingo', 'Santo Domingo Este', 'Santo Domingo Oeste', 'Santo Domingo Norte',
+  'Santiago', 'San Pedro de Macorís', 'La Romana', 'Puerto Plata', 'San Francisco de Macorís',
+  'La Vega', 'Higüey', 'Barahona', 'Mao', 'Bonao', 'Cotuí', 'Azua', 'San Cristóbal', 'Moca',
+  'Nagua', 'Monte Cristi', 'Dajabón', 'Elías Piña', 'Jimaní', 'Pedernales', 'Bani',
+  'Constanza', 'Jarabacoa', 'Samaná', 'Las Terrenas', 'Sosúa', 'Cabarete', 'Boca Chica',
+  'Juan Dolio', 'Punta Cana', 'Bavaro', 'Villa Altagracia', 'Monción'
+]
 
 function PostListing() {
   const navigate = useNavigate()
