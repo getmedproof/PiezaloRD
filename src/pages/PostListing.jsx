@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../supabase'
 import './PostListing.css'
@@ -9,12 +9,25 @@ const CITIES = ['Santo Domingo', 'Santiago', 'San Pedro de Macorís', 'La Romana
 
 function PostListing() {
   const navigate = useNavigate()
+  const [user, setUser] = useState(null)
+  const [checking, setChecking] = useState(true)
   const [loading, setLoading] = useState(false)
   const [image, setImage] = useState(null)
   const [preview, setPreview] = useState(null)
   const [form, setForm] = useState({
     title: '', price: '', condition: '', category: '', city: '', whatsapp: '', description: ''
   })
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user ?? null)
+      setChecking(false)
+    })
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => sub.subscription.unsubscribe()
+  }, [])
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -30,6 +43,10 @@ function PostListing() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!user) {
+      navigate('/login')
+      return
+    }
     setLoading(true)
 
     let image_url = null
@@ -59,16 +76,40 @@ function PostListing() {
         city: form.city,
         whatsapp: form.whatsapp,
         image_url,
+        user_id: user.id,
+        status: 'pending',
       }])
 
     setLoading(false)
 
     if (error) {
-      alert('Error al publicar: ' + error.message)
+      alert('No se pudo publicar. Intenta de nuevo o inicia sesión otra vez.')
     } else {
-      alert('¡Pieza publicada exitosamente!')
+      alert('¡Listo! Tu pieza fue enviada y aparecerá cuando sea aprobada.')
       navigate('/')
     }
+  }
+
+  if (checking) {
+    return (
+      <div className="post-page">
+        <div className="post-card"><p className="post-subtitle">Cargando...</p></div>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return (
+      <div className="post-page">
+        <div className="post-card">
+          <h1>Publicar pieza</h1>
+          <p className="post-subtitle">Debes iniciar sesión para publicar una pieza.</p>
+          <button className="btn-publish" onClick={() => navigate('/login')}>
+            Iniciar sesión
+          </button>
+        </div>
+      </div>
+    )
   }
 
   return (
